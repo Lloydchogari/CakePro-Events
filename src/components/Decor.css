@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+
+:root {
+  --dc-accent: #c0392b;
+  --dc-accent-dark: #a93226;
+}
+
+/* ── Section ── */
+.decor-cta {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Parallax background */
+.decor-cta__bg {
+  position: absolute;
+  inset: -60px;
+  background-image: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&q=70");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+  transition: transform 0.7s ease;
+}
+
+/* Dark overlay */
+.decor-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.40);
+  z-index: 1;
+  transition: background 0.6s ease;
+}
+
+/* ── Inner ── */
+.decor-cta__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 112px 5vw;
+}
+
+/* ── Content block ── */
+.decor-cta__content {
+  max-width: 640px;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+}
+
+.decor-cta--visible .decor-cta__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow */
+.decor-cta__eyebrow {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--dc-accent);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+/* Heading */
+.decor-cta__heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0 0 28px;
+  letter-spacing: -0.5px;
+}
+
+.decor-cta__heading em {
+  font-style: italic;
+  color: var(--dc-accent);
+}
+
+/* Body */
+.decor-cta__body {
+  font-size: 0.88rem;
+  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 44px;
+  max-width: 420px;
+  font-weight: 400;
+}
+
+/* ── CTA Button ── */
+.decor-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 16px 40px;
+  background: var(--dc-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, transform 0.2s ease, gap 0.3s ease;
+}
+
+.decor-cta__btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--dc-accent-dark);
+  transform: translateX(-101%);
+  transition: transform 0.35s ease;
+  z-index: 0;
+}
+
+.decor-cta__btn:hover::before {
+  transform: translateX(0);
+}
+
+.decor-cta__btn:hover {
+  gap: 20px;
+}
+
+.decor-cta__btn-text,
+.decor-cta__btn-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.decor-cta__btn-arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.decor-cta__btn:hover .decor-cta__btn-arrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   Page-leave transition curtain
+   ========================================================= */
+
+/* The curtain sits below everything, revealed on leave */
+.decor-cta__curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--dc-accent);
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform 0s; /* no transition by default */
+  pointer-events: none;
+}
+
+/* When leaving: slide curtain UP over the page */
+.decor-cta--leaving .decor-cta__curtain {
+  transform: translateY(0);
+  transition: transform 0.65s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: all;
+}
+
+/* Freeze and dim everything else behind the curtain */
+.decor-cta--leaving .decor-cta__bg {
+  transform: scale(1.06);
+}
+
+.decor-cta--leaving .decor-cta__overlay {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.decor-cta--leaving .decor-cta__content {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 768px) {
+  .decor-cta__inner {
+    padding: 80px 6vw;
+  }
+
+  .decor-cta__body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .decor-cta__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

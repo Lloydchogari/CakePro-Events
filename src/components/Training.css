@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+
+/* ── Variables ── */
+:root {
+  --tr-accent: #c0392b;
+  --tr-dark: #1a1a1a;
+  --tr-muted: #7a7a7a;
+  --tr-border: #e8e8e8;
+  --tr-white: #ffffff;
+  --tr-card-hover-border: #c0392b;
+  --tr-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Section ── */
+.training {
+  position: relative;
+  overflow: hidden;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Parallax background image */
+.training__bg {
+  position: absolute;
+  inset: -60px;              /* extra space so parallax doesn't show edges */
+  background-image: url("https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=70");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* White near-opaque overlay */
+.training__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+  z-index: 1;
+}
+
+/* ── Inner two-column grid ── */
+.training__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 112px 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: center;
+}
+
+/* =========================================================
+   LEFT column
+   ========================================================= */
+.training__left {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease 0.1s, transform 0.75s ease 0.1s;
+}
+
+.training--visible .training__left {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* "Learn With Us" eyebrow */
+.training__eyebrow {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--tr-accent);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+/* Heading */
+.training__heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--tr-dark);
+  margin: 0 0 28px;
+  letter-spacing: -0.5px;
+}
+
+.training__heading em {
+  font-style: italic;
+  color: var(--tr-accent);
+}
+
+/* Thin horizontal rule */
+.training__rule {
+  width: 40px;
+  height: 1px;
+  background: var(--tr-accent);
+  margin-bottom: 28px;
+}
+
+/* Body text */
+.training__body {
+  font-size: 0.9rem;
+  line-height: 1.95;
+  color: var(--tr-muted);
+  margin: 0 0 36px;
+  font-weight: 400;
+  max-width: 420px;
+}
+
+/* CTA Button */
+.training__cta {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 16px 40px;
+  background: var(--tr-dark);
+  color: var(--tr-white);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.training__cta:hover {
+  background: var(--tr-accent);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   RIGHT column – Cards
+   ========================================================= */
+.training__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.training__card {
+  padding: 22px 28px;
+  border: 1px solid var(--tr-border);
+  background: var(--tr-white);
+  box-shadow: var(--tr-shadow);
+  transition: border-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateX(28px);
+}
+
+.training--visible .training__card {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.55s ease, transform 0.55s ease,
+              border-color 0.3s ease, box-shadow 0.25s ease;
+}
+
+.training__card:hover {
+  border-color: var(--tr-card-hover-border);
+  transform: translateX(-4px);
+  box-shadow: 0 6px 28px rgba(192, 57, 43, 0.1);
+}
+
+/* Red left accent bar on hover */
+.training__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.training__card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--tr-accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.training__card:hover::before {
+  transform: scaleY(1);
+}
+
+.training__card-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.18rem;
+  font-weight: 400;
+  color: var(--tr-dark);
+  margin: 0 0 8px;
+  letter-spacing: 0.1px;
+}
+
+.training__card-desc {
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--tr-muted);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 900px) {
+  .training__inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding: 80px 5vw;
+  }
+
+  .training__body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .training__inner {
+    padding: 64px 6vw;
+  }
+
+  .training__card {
+    padding: 18px 20px;
+  }
+}

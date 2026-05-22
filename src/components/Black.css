@@ -1,0 +1,100 @@
+.black-section {
+  background: #000;
+  padding: 50px 20px 70px;
+}
+
+.black-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.black-image img {
+  width: 100%;
+  height: 620px;
+  object-fit: contain;
+  display: block;
+  border-radius: 20px;
+  margin-bottom: 120px;
+}
+
+.black-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.text-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.text-card h3 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.text-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.7;
+  font-size: 1rem;
+  max-width: 520px;
+}
+
+.text-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.mini-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.mini-card h4 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.mini-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .black-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .black-image img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .black-section {
+    padding: 35px 16px 55px;
+  }
+
+  .black-image img {
+    height: 250px;
+  }
+
+  .text-grid {
+    grid-template-columns: 1fr;
+  }
+}

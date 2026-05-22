@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600&display=swap");
+
+/* ── Variables ── */
+:root {
+  --fl-bg: #f0f8fa;
+  --fl-brown-dark: #3b1c10;
+  --fl-brown-mid: #5c2d1a;
+  --fl-brown-btn: #4a2116;
+  --fl-accent: #c8a08a;
+  --fl-text: #4a2c20;
+  --fl-circle-size: 110px;
+  --fl-circle-border: 3px solid #fff;
+  --fl-shadow: 0 8px 30px rgba(90, 40, 20, 0.18);
+}
+
+/* ── Section wrapper ── */
+.flavour {
+  position: relative;
+  background-color: var(--fl-bg);
+  overflow: visible;
+  padding: 80px 40px;
+  font-family: "Lato", sans-serif;
+}
+
+.flavour__overlap-img-wrap {
+  z-index: 30;
+}
+
+/* ── Cream-splash decorative blob (top-right) ── */
+.flavour__blob {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  width: 400px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at 60% 40%,
+    rgba(187, 255, 255, 0.55) 0%,
+    rgba(185, 253, 255, 0.25) 55%,
+    transparent 75%
+  );
+  border-radius: 50% 40% 60% 30% / 50% 60% 40% 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(18px);
+}
+
+/* ── Two-column inner layout ── */
+.flavour__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* =========================================================
+   LEFT – Visual area
+   ========================================================= */
+.flavour__visual {
+  position: relative;
+  flex: 0 0 52%;
+  min-height: 580px;
+}
+
+/* Hero cake image */
+.flavour__hero-wrap {
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  width: 340px;
+  z-index: 2;
+}
+
+.flavour__hero-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  /* entry animation */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+}
+
+.flavour--visible .flavour__hero-img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SVG dashed curve */
+.flavour__connector {
+  position: absolute;
+  top: 0;
+  left: 28%;
+  width: 300px;
+  height: 600px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.4s;
+}
+
+.flavour--visible .flavour__connector {
+  opacity: 1;
+}
+
+/* ── Circular thumbnails ── */
+.flavour__circle {
+  position: absolute;
+  width: var(--fl-circle-size);
+  height: var(--fl-circle-size);
+  border-radius: 50%;
+  left: 30%;
+  border: var(--fl-circle-border);
+  box-shadow: var(--fl-shadow);
+  overflow: hidden;
+  z-index: 3;
+  background: #fff;
+
+  /* entry animation */
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.flavour--visible .flavour__circle {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.flavour__circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.flavour__circle:hover img {
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   RIGHT – Content
+   ========================================================= */
+.flavour__content {
+  flex: 0 0 42%;
+  padding-left: 20px;
+  padding-top: 80px; /* ← pushes text down */
+  position: relative;
+
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s;
+}
+
+.flavour--visible .flavour__content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Overlapping image ── */
+.flavour__overlap-img-wrap {
+  position: absolute;
+  top: -220px;       /* climbs into the section above */
+  right: 20%;
+  width: 450px;
+  height: 200px;
+  border-radius: 2%; 
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: var(--fl-shadow);
+  z-index: 20;
+}
+
+.flavour__overlap-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Title */
+.flavour__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--fl-brown-dark);
+  margin: 0 0 20px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+/* Description */
+.flavour__desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--fl-text);
+  margin: 0 0 24px;
+  max-width: 440px;
+}
+
+/* Bullet list */
+.flavour__list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flavour__list li {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fl-brown-dark);
+}
+
+/* ── CTA Buttons ── */
+.flavour__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.flavour__btn {
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease;
+  border: 2px solid var(--fl-brown-btn);
+  letter-spacing: 0.3px;
+}
+
+.flavour__btn--filled {
+  background-color: var(--fl-brown-btn);
+  color: #fff;
+}
+
+.flavour__btn--filled:hover {
+  background-color: var(--fl-brown-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 33, 22, 0.35);
+}
+
+.flavour__btn--outline {
+  background-color: transparent;
+  color: var(--fl-brown-btn);
+}
+
+.flavour__btn--outline:hover {
+  background-color: var(--fl-brown-btn);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 33, 22, 0.25);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 900px) {
+  .flavour__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flavour__visual {
+    flex: none;
+    width: 100%;
+    min-height: 460px;
+  }
+
+  .flavour__content {
+    flex: none;
+    padding-left: 0;
+    text-align: center;
+    transform: translateY(30px);
+  }
+
+  .flavour--visible .flavour__content {
+    transform: translateY(0);
+  }
+
+  .flavour__list {
+    align-items: center;
+  }
+
+  .flavour__actions {
+    justify-content: center;
+  }
+
+  .flavour__hero-wrap {
+    width: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 560px) {
+  .flavour {
+    padding: 60px 20px;
+  }
+
+  :root {
+    --fl-circle-size: 82px;
+  }
+
+  .flavour__hero-wrap {
+    width: 200px;
+  }
+}

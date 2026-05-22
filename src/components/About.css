@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap");
+
+/* ── Variables ── */
+:root {
+  --ab-white: white;
+  --ab-red: #c0392b;
+  --ab-red-light: #e8534310;
+  --ab-red-mid: #e05444;
+  --ab-dark: #1a1a1a;
+  --ab-muted: #6b6b6b;
+  --ab-border: #f0f0f0;
+  --ab-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Section ── */
+.about {
+  background-color: var(--ab-white);
+  padding: 100px 40px;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+/* ── Inner two-column layout ── */
+.about__inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* =========================================================
+   LEFT – Image column
+   ========================================================= */
+.about__img-col {
+  position: relative;
+  flex: 0 0 44%;
+
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+
+.about--visible .about__img-col {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Main image frame */
+.about__img-frame {
+  position: relative;
+  border-radius: 4px 60px 4px 60px; /* asymmetric rounded corners */
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  /* box-shadow: var(--ab-shadow); */
+}
+
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about__img-frame:hover .about__img {
+  transform: scale(1.04);
+}
+
+/* "Est. 2016" red floating tag */
+.about__img-tag {
+  position: absolute;
+  bottom: 28px;
+  left: -24px;
+  background: var(--ab-red);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.4);
+  font-family: "DM Sans", sans-serif;
+}
+
+.about__img-tag span {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.about__img-tag strong {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Decorative dot grid (bottom-right of image) */
+.about__dot-grid {
+  position: absolute;
+  bottom: -28px;
+  right: -28px;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(circle, var(--ab-red) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.18;
+  z-index: -1;
+}
+
+/* =========================================================
+   RIGHT – Content column
+   ========================================================= */
+.about__content {
+  flex: 1;
+
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.about--visible .about__content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* "Our Story" eyebrow */
+.about__eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ab-red);
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.about__eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 2px;
+  background: var(--ab-red);
+}
+
+/* Main heading */
+.about__heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--ab-dark);
+  line-height: 1.2;
+  margin: 0 0 28px;
+  letter-spacing: -0.3px;
+}
+
+/* Body text */
+.about__body {
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: var(--ab-muted);
+  margin: 0 0 16px;
+  max-width: 500px;
+}
+
+/* ── Stats cards ── */
+.about__stats {
+  display: flex;
+  gap: 16px;
+  margin: 40px 0 44px;
+  flex-wrap: wrap;
+}
+
+.about__stat-card {
+  flex: 1;
+  min-width: 100px;
+  background: var(--ab-white);
+  border: 1.5px solid var(--ab-border);
+  border-radius: 16px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.25s ease;
+}
+
+.about--visible .about__stat-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about__stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(192, 57, 43, 0.12);
+}
+
+/* Red top accent bar */
+.about__stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ab-red);
+  border-radius: 16px 16px 0 0;
+}
+
+.about__stat-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ab-red);
+  line-height: 1;
+}
+
+.about__stat-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ab-muted);
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* ── CTA Button ── */
+.about__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--ab-red);
+  color: #fff;
+  border: none;
+  padding: 15px 36px;
+  border-radius: 50px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 20px rgba(192, 57, 43, 0.35);
+}
+
+.about__cta:hover {
+  background-color: #a93226;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(192, 57, 43, 0.45);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 900px) {
+  .about__inner {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .about__img-col {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  .about__eyebrow {
+    padding-left: 0;
+  }
+
+  .about__eyebrow::before {
+    display: none;
+  }
+
+  .about__body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about__stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .about {
+    padding: 70px 20px;
+  }
+
+  .about__stats {
+    gap: 12px;
+  }
+
+  .about__stat-card {
+    min-width: 80px;
+    padding: 18px 12px;
+  }
+}
