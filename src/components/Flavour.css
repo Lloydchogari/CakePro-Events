@@ -201,6 +201,7 @@
   max-width: 440px;
 }
 
+/* Bullet list */
 .flavour__list {
   list-style: disc;
   padding-left: 20px;
@@ -216,6 +217,7 @@
   color: var(--fl-brown-dark);
 }
 
+/* ── CTA Buttons ── */
 .flavour__actions {
   display: flex;
   gap: 16px;
@@ -258,8 +260,9 @@
   box-shadow: 0 6px 20px rgba(74, 33, 22, 0.25);
 }
 
-
-
+/* =========================================================
+   Responsive
+   ========================================================= */
 @media (max-width: 900px) {
   .flavour__inner {
     flex-direction: column;

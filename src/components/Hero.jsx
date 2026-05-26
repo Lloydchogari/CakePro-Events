@@ -7,6 +7,8 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-container">
+        
+        {/* TEXT CONTENT */}
         <motion.div
           className="hero-text"
           initial={{ opacity: 0, x: -60 }}
@@ -36,15 +38,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
           >
-            <a href="#cakes" className="btn btn-primary">
-              View Cakes
-            </a>
-            <a href="#contact" className="btn btn-secondary">
-              Book a Tasting
-            </a>
+            <a href="#cakes" className="btn btn-primary">View Cakes</a>
+            <a href="#contact" className="btn btn-secondary">Book Tasting</a>
           </motion.div>
         </motion.div>
 
+        {/* IMAGE WRAP (This pushes left on mobile) */}
         <motion.div
           className="hero-image-wrap"
           initial={{ opacity: 0, x: 60, scale: 0.95 }}
@@ -53,45 +52,33 @@ const Hero = () => {
         >
           <img src="/cake4.jpg" alt="Delicious cake" className="hero-image" />
         </motion.div>
-      </div>
 
-      <motion.div
-        className="hero-social-icons"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.7, duration: 0.8 }}
-      >
-        <div className="social-item">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaFacebook />
-          </a>
-          <span className="social-text">Facebook</span>
-        </div>
-        <div className="social-item">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaInstagram />
-          </a>
-          <span className="social-text">Instagram</span>
-        </div>
-        <div className="social-item">
-          <a href="mailto:contact@cakes.com" className="social-icon">
-            <FaEnvelope />
-          </a>
-          <span className="social-text">contact@cakes.com</span>
-        </div>
-        <div className="social-item">
-          <a href="#location" className="social-icon">
-            <FaMapMarkerAlt />
-          </a>
-          <span className="social-text">Find Us</span>
-        </div>
-        <div className="social-item">
-          <a href="tel:+1234567890" className="social-icon">
-            <FaPhone />
-          </a>
-          <span className="social-text">+1 (234) 567-890</span>
-        </div>
-      </motion.div>
+        {/* VERTICAL ICONS (Pins to right on mobile) */}
+        <motion.div
+          className="hero-social-icons"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+        >
+          <div className="social-item">
+            <a href="#" className="social-icon"><FaFacebook /></a>
+            <span className="social-text">Facebook</span>
+          </div>
+          <div className="social-item">
+            <a href="#" className="social-icon"><FaInstagram /></a>
+            <span className="social-text">Instagram</span>
+          </div>
+          <div className="social-item">
+            <a href="#" className="social-icon"><FaEnvelope /></a>
+            <span className="social-text">Email</span>
+          </div>
+          <div className="social-item">
+            <a href="#" className="social-icon"><FaPhone /></a>
+            <span className="social-text">Call</span>
+          </div>
+        </motion.div>
+
+      </div>
     </section>
   );
 };

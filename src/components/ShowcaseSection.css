@@ -196,7 +196,7 @@
   .showcase__feature { padding: 20px 0; text-align: left; }
   .showcase__feature + .showcase__feature::before { display: none; }
   
-  /* Horizontal red line for mobile */
+  
   .showcase__feature + .showcase__feature { 
     border-top: 2px solid #ff0000; 
   }
