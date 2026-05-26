@@ -1,74 +1,42 @@
 import React from "react";
 import "./Services.css";
 
-const services = [
-  {
-    title: "Custom Cakes",
-    text: "Personalized cakes designed to match your theme, taste, and celebration.",
-    icon: "🎂",
-  },
-  {
-    title: "Wedding Cakes",
-    text: "Elegant wedding cakes crafted to make your big day unforgettable.",
-    icon: "💍",
-  },
-  {
-    title: "Baking Lessons",
-    text: "Learn cake baking and decorating with hands-on friendly lessons.",
-    icon: "📚",
-  },
-  {
-    title: "Wedding Decor",
-    text: "Beautiful decor styling to complement your wedding cake and venue.",
-    icon: "🌸",
-  },
-  {
-    title: "Birthday Decor",
-    text: "Fun and classy birthday setups for all ages and party styles.",
-    icon: "🎉",
-  },
-  {
-    title: "Event Decor",
-    text: "Full event styling that makes your celebration look polished and special.",
-    icon: "✨",
-  },
-  {
-    title: "Delivery",
-    text: "Safe and timely delivery so your cake arrives fresh and perfect.",
-    icon: "🚚",
-  },
-  {
-    title: "Setup",
-    text: "Professional setup for cakes and decor so everything looks just right.",
-    icon: "🛠️",
-  },
+const SERVICE_ICONS = [
+  { src: "/public/Cake1.jpg", alt: "Service 1" },
+  { src: "/public/cake4.jpg", alt: "Service 2" },
+  { src: "/public/cake.jpg", alt: "Service 3" },
+  { src: "/public/cake2.jpg", alt: "Service 4" },
+  { src: "/public/cake_2.jpg", alt: "Service 5" },
+  { src: "/public/logo.jpeg", alt: "Service 6" },
 ];
 
-const ServicesSection = () => {
+export default function Services() {
+  // We double the array to ensure a seamless infinite loop
+  const scrollIcons = [...SERVICE_ICONS, ...SERVICE_ICONS];
+
   return (
-    <section className="services-section" id="services">
-      <div className="services-inner">
-        <div className="services-header">
-          <p className="services-mini">Our Services</p>
-          <h2>Everything we give for your special moments</h2>
-          <p className="services-text">
-            From custom cakes to full event styling, we make celebrations sweet,
-            beautiful, and stress-free.
-          </p>
+    <section className="services">
+      <div className="services__container">
+        <h3 className="services__title">Our Services</h3>
+        
+        {/* Scrolling Track */}
+        <div className="services__slider">
+          <div className="services__track">
+            {scrollIcons.map((icon, index) => (
+              <div className="services__item" key={index}>
+                <img src={icon.src} alt={icon.alt} />
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="services-grid">
-          {services.map((service) => (
-            <div key={service.title} className="service-card">
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-            </div>
-          ))}
+        {/* Bottom Right Button */}
+        <div className="services__footer">
+          <a href="/services" className="services__btn">
+            View All
+          </a>
         </div>
       </div>
     </section>
   );
-};
-
-export default ServicesSection;
+}

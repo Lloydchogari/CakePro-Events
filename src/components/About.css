@@ -12,7 +12,6 @@
   --ab-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* ── Section ── */
 .about {
   background-color: var(--ab-white);
   padding: 100px 40px;
@@ -20,7 +19,6 @@
   overflow: hidden;
 }
 
-/* ── Inner two-column layout ── */
 .about__inner {
   max-width: 1160px;
   margin: 0 auto;
@@ -29,9 +27,9 @@
   gap: 80px;
 }
 
-/* =========================================================
-   LEFT – Image column
-   ========================================================= */
+
+
+
 .about__img-col {
   position: relative;
   flex: 0 0 44%;
@@ -46,10 +44,9 @@
   transform: translateX(0);
 }
 
-/* Main image frame */
 .about__img-frame {
   position: relative;
-  border-radius: 4px 60px 4px 60px; /* asymmetric rounded corners */
+  border-radius: 4px 60px 4px 60px;
   overflow: hidden;
   aspect-ratio: 4 / 5;
   /* box-shadow: var(--ab-shadow); */
@@ -67,7 +64,6 @@
   transform: scale(1.04);
 }
 
-/* "Est. 2016" red floating tag */
 .about__img-tag {
   position: absolute;
   bottom: 28px;
@@ -96,7 +92,7 @@
   font-weight: 600;
 }
 
-/* Decorative dot grid (bottom-right of image) */
+
 .about__dot-grid {
   position: absolute;
   bottom: -28px;
@@ -109,9 +105,9 @@
   z-index: -1;
 }
 
-/* =========================================================
-   RIGHT – Content column
-   ========================================================= */
+
+
+
 .about__content {
   flex: 1;
 
@@ -125,7 +121,7 @@
   transform: translateX(0);
 }
 
-/* "Our Story" eyebrow */
+
 .about__eyebrow {
   display: inline-block;
   font-size: 0.8rem;
@@ -149,7 +145,8 @@
   background: var(--ab-red);
 }
 
-/* Main heading */
+
+
 .about__heading {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
@@ -160,7 +157,7 @@
   letter-spacing: -0.3px;
 }
 
-/* Body text */
+
 .about__body {
   font-size: 0.97rem;
   line-height: 1.85;
@@ -169,7 +166,7 @@
   max-width: 500px;
 }
 
-/* ── Stats cards ── */
+
 .about__stats {
   display: flex;
   gap: 16px;
@@ -208,7 +205,8 @@
   box-shadow: 0 12px 32px rgba(192, 57, 43, 0.12);
 }
 
-/* Red top accent bar */
+
+
 .about__stat-card::before {
   content: "";
   position: absolute;
@@ -236,7 +234,7 @@
   letter-spacing: 0.4px;
 }
 
-/* ── CTA Button ── */
+
 .about__cta {
   display: inline-flex;
   align-items: center;
@@ -261,9 +259,8 @@
   box-shadow: 0 10px 28px rgba(192, 57, 43, 0.45);
 }
 
-/* =========================================================
-   Responsive
-   ========================================================= */
+
+
 @media (max-width: 900px) {
   .about__inner {
     flex-direction: column;

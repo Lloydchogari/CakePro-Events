@@ -66,17 +66,14 @@ export default function About() {
               alt="Céleste bakery"
               className="about__img"
             />
-            {/* Red accent tag */}
             <div className="about__img-tag">
               <span>Est.</span>
               <strong>2016</strong>
             </div>
           </div>
-          {/* Decorative red dot-grid */}
           <div className="about__dot-grid" aria-hidden="true" />
         </div>
 
-        {/* ── RIGHT: Content ── */}
         <div className="about__content">
           <span className="about__eyebrow">Our Story</span>
 
@@ -95,7 +92,7 @@ export default function About() {
             or a grand wedding showpiece for five hundred guests.
           </p>
 
-          {/* Stats */}
+
           <div className="about__stats">
             {stats.map((s, i) => (
               <div

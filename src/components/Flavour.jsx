@@ -29,13 +29,10 @@ export default function Flavour() {
 
   return (
     <section className="flavour" ref={sectionRef}>
-      {/* Decorative cream-splash background blob (right side) */}
       <div className="flavour__blob" aria-hidden="true" />
 
       <div className="flavour__inner">
-        {/* ── LEFT COLUMN ── */}
         <div className="flavour__visual">
-          {/* Hero cake */}
           <div className="flavour__hero-wrap">
             <img
               src="/public/logo.jpeg"
@@ -44,7 +41,6 @@ export default function Flavour() {
             />
           </div>
 
-          {/* SVG curved connector line */}
           <svg
             className="flavour__connector"
             viewBox="0 0 300 600"
@@ -75,7 +71,6 @@ export default function Flavour() {
 
         {/* ── RIGHT COLUMN ── */}
         <div className="flavour__content">
-          {/* Overlapping image at the top-right corner */}
           <div className="flavour__overlap-img-wrap">
             <img
               src="/public/images/cake16.jpg"

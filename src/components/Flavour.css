@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;600&display=swap");
 
-/* ── Variables ── */
 :root {
   --fl-bg: #f0f8fa;
   --fl-brown-dark: #3b1c10;
@@ -13,7 +12,6 @@
   --fl-shadow: 0 8px 30px rgba(90, 40, 20, 0.18);
 }
 
-/* ── Section wrapper ── */
 .flavour {
   position: relative;
   background-color: var(--fl-bg);
@@ -26,7 +24,7 @@
   z-index: 30;
 }
 
-/* ── Cream-splash decorative blob (top-right) ── */
+
 .flavour__blob {
   position: absolute;
   top: -60px;
@@ -45,7 +43,8 @@
   filter: blur(18px);
 }
 
-/* ── Two-column inner layout ── */
+
+
 .flavour__inner {
   position: relative;
   z-index: 1;
@@ -57,16 +56,15 @@
   gap: 40px;
 }
 
-/* =========================================================
-   LEFT – Visual area
-   ========================================================= */
+
+
+
 .flavour__visual {
   position: relative;
   flex: 0 0 52%;
   min-height: 580px;
 }
 
-/* Hero cake image */
 .flavour__hero-wrap {
   position: absolute;
   bottom: 160px;
@@ -80,7 +78,6 @@
   height: auto;
   object-fit: contain;
 
-  /* entry animation */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
@@ -108,7 +105,6 @@
   opacity: 1;
 }
 
-/* ── Circular thumbnails ── */
 .flavour__circle {
   position: absolute;
   width: var(--fl-circle-size);
@@ -144,13 +140,14 @@
   transform: scale(1.1);
 }
 
-/* =========================================================
-   RIGHT – Content
-   ========================================================= */
+
+
+
+
 .flavour__content {
   flex: 0 0 42%;
   padding-left: 20px;
-  padding-top: 80px; /* ← pushes text down */
+  padding-top: 80px; 
   position: relative;
 
   opacity: 0;
@@ -163,10 +160,9 @@
   transform: translateX(0);
 }
 
-/* ── Overlapping image ── */
 .flavour__overlap-img-wrap {
   position: absolute;
-  top: -220px;       /* climbs into the section above */
+  top: -220px;      
   right: 20%;
   width: 450px;
   height: 200px;
@@ -184,7 +180,8 @@
   display: block;
 }
 
-/* Title */
+
+
 .flavour__title {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -195,7 +192,7 @@
   letter-spacing: -0.5px;
 }
 
-/* Description */
+
 .flavour__desc {
   font-size: 1rem;
   line-height: 1.75;
@@ -204,7 +201,6 @@
   max-width: 440px;
 }
 
-/* Bullet list */
 .flavour__list {
   list-style: disc;
   padding-left: 20px;
@@ -220,7 +216,6 @@
   color: var(--fl-brown-dark);
 }
 
-/* ── CTA Buttons ── */
 .flavour__actions {
   display: flex;
   gap: 16px;
@@ -263,9 +258,8 @@
   box-shadow: 0 6px 20px rgba(74, 33, 22, 0.25);
 }
 
-/* =========================================================
-   Responsive
-   ========================================================= */
+
+
 @media (max-width: 900px) {
   .flavour__inner {
     flex-direction: column;
