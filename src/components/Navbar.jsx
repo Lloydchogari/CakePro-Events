@@ -46,7 +46,7 @@ const Navbar = () => {
 
         {/* LEFT — Logo */}
         <a href="#home" className="logo" onClick={closeMenu}>
-          <img src="/public/logo.jpeg" alt="Cake Logo" />
+          <img src="/logo.jpeg" alt="Cake Logo" />
         </a>
 
         {/* CENTRE — Links (desktop only, no order btn here) */}

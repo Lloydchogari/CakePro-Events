@@ -2,11 +2,11 @@ import React, { useEffect, useRef } from "react";
 import "./Flavour.css";
 
 const flavourCircles = [
-  { id: 1, src: "/public/cake2.jpg", alt: "Chocolate Cake", top: "3%",  left: "50%" },
-  { id: 2, src: "/public/cake4 (2).jpg", alt: "Caramel Cake",   top: "20%", left: "60%" },
-  { id: 3, src: "/public/cake4.jpg", alt: "Red Velvet",     top: "40%", left: "62%" },
-  { id: 4, src: "/public/cake_2.jpg", alt: "Floral Cake",    top: "58%", left: "54%" },
-  { id: 5, src: "/public/cake.jpg", alt: "Layered Cake",   top: "74%", left: "42%" },
+  { id: 1, src: "/cake2.jpg", alt: "Chocolate Cake", top: "3%",  left: "50%" },
+  { id: 2, src: "/cake4 (2).jpg", alt: "Caramel Cake",   top: "20%", left: "60%" },
+  { id: 3, src: "/cake4.jpg", alt: "Red Velvet",     top: "40%", left: "62%" },
+  { id: 4, src: "/cake_2.jpg", alt: "Floral Cake",    top: "58%", left: "54%" },
+  { id: 5, src: "/cake.jpg", alt: "Layered Cake",   top: "74%", left: "42%" },
 ];
 
 export default function Flavour() {
@@ -35,7 +35,7 @@ export default function Flavour() {
         <div className="flavour__visual">
           <div className="flavour__hero-wrap">
             <img
-              src="/public/logo.jpeg"
+              src="/logo.jpeg"
               alt="Hero chocolate drip cake"
               className="flavour__hero-img"
             />
@@ -73,7 +73,7 @@ export default function Flavour() {
         <div className="flavour__content">
           <div className="flavour__overlap-img-wrap">
             <img
-              src="/public/images/cake16.jpg"
+              src="/images/cake16.jpg"
               alt="Featured cake"
               className="flavour__overlap-img"
             />

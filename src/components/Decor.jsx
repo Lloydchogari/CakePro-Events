@@ -43,14 +43,14 @@ export default function DecorCTA() {
 
         <div className="decor-cta__visuals">
           <div className="decor-img-top">
-            <img src="/public/logo.jpeg" alt="logo" />
+            <img src="/logo.jpeg" alt="logo" />
           </div>
           <div className="decor-img-bottom-row">
             <div className="decor-circle-img">
-              <img src="/public/logo.jpeg" alt="Birthday Decor" />
+              <img src="/logo.jpeg" alt="Birthday Decor" />
             </div>
             <div className="decor-circle-img">
-              <img src="/public/logo.jpeg" alt="White Party Decor" />
+              <img src="/logo.jpeg" alt="White Party Decor" />
             </div>
           </div>
         </div>

@@ -2,11 +2,11 @@ import React from "react";
 import "./ShowcaseSection.css";
 
 const CAKE_IMAGES = [
-  { src: "/public/cake.jpg",       alt: "Signature Drip Cake" },
-  { src: "/public/cake2.jpg",      alt: "Red Velvet Showpiece" },
-  { src: "/public/cake4.jpg",      alt: "Floral Wedding Tier" },
-  { src: "/public/cake_2.jpg",     alt: "Fondant Sculpt" },
-  { src: "/public/cake4 (2).jpg",  alt: "Caramel Celebration" },
+  { src: "/cake.jpg",       alt: "Signature Drip Cake" },
+  { src: "/cake2.jpg",      alt: "Red Velvet Showpiece" },
+  { src: "/cake4.jpg",      alt: "Floral Wedding Tier" },
+  { src: "/cake_2.jpg",     alt: "Fondant Sculpt" },
+  { src: "/cake4 (2).jpg",  alt: "Caramel Celebration" },
 ];
 
 const ARC_TILTS   = [-28, -14, 0, 14, 28];
@@ -22,7 +22,6 @@ const FEATURES = [
 export default function ShowcaseSection() {
   return (
     <section className="showcase">
-      {/* ── Heading ── */}
       <div className="showcase__hero-text">
         <h2 className="showcase__heading">
           <span className="showcase__heading-thin">Baked for Every</span>

@@ -2,22 +2,22 @@ import React, { useState, useRef, useEffect } from "react";
 import "./Gallery.css";
 
 const cakes = [
-  { img: "/public/images/cake7.jpg", title: "Chocolate Delight", text: "Rich cocoa layers with creamy filling.", price: "$25" },
-  { img: "/public/images/cake24.jpg", title: "Strawberry Dream", text: "Soft sponge with fresh berry cream.", price: "$22" },
-  { img: "/public/images/cake22.jpg", title: "Vanilla Bliss", text: "Classic vanilla cake with smooth frosting.", price: "$20" },
-  { img: "/public/images/cake17.jpg", title: "Red Velvet Luxe", text: "Velvety texture with elegant finish.", price: "$28" },
-  { img: "/public/images/cake28.jpg", title: "Caramel Crunch", text: "Buttery caramel with crunchy pecan bits.", price: "$27" },
-  { img: "/public/images/cake202.jpg", title: "Berry Passion", text: "Fresh berries folded into light mousse.", price: "$24" },
-  { img: "/public/images/cake7.jpg", title: "Lemon Meringue", text: "Tangy lemon with silky meringue topping.", price: "$26" },
-  { img: "/public/images/cake8.jpg", title: "Hazelnut Heaven", text: "Nutty layers with silky chocolate ganache.", price: "$29" },
-  { img: "/public/images/cake9.jpg", title: "Salted Caramel", text: "Sweet caramel balanced with sea salt.", price: "$26" },
-  { img: "/public/images/cake10.jpg", title: "Coconut Cloud", text: "Light coconut sponge with cream cheese icing.", price: "$23" },
-  { img: "/public/images/cake11.jpg", title: "Matcha Dream", text: "Green tea layers with white chocolate.", price: "$25" },
-  { img: "/public/images/cake12.jpg", title: "Coffee Velvet", text: "Rich coffee cake with crema frosting.", price: "$27" },
-  { img: "/public/images/cake13.jpg", title: "Banana Caramel", text: "Soft banana cake with salted caramel.", price: "$22" },
-  { img: "/public/images/cake14.jpg", title: "Peach Blossom", text: "Fresh peach filling with almond sponge.", price: "$24" },
-  { img: "/public/images/cake15.jpg", title: "Cherry Chocolate", text: "Cherry compote between chocolate layers.", price: "$28" },
-  { img: "/public/images/cake16.jpg", title: "Nutella Swirl", text: "Creamy hazelnut spread inside every slice.", price: "$30" },
+  { img: "/images/cake7.jpg", title: "Chocolate Delight", text: "Rich cocoa layers with creamy filling.", price: "$25" },
+  { img: "/images/cake24.jpg", title: "Strawberry Dream", text: "Soft sponge with fresh berry cream.", price: "$22" },
+  { img: "/images/cake22.jpg", title: "Vanilla Bliss", text: "Classic vanilla cake with smooth frosting.", price: "$20" },
+  { img: "/images/cake17.jpg", title: "Red Velvet Luxe", text: "Velvety texture with elegant finish.", price: "$28" },
+  { img: "/images/cake28.jpg", title: "Caramel Crunch", text: "Buttery caramel with crunchy pecan bits.", price: "$27" },
+  { img: "/images/cake202.jpg", title: "Berry Passion", text: "Fresh berries folded into light mousse.", price: "$24" },
+  { img: "/images/cake7.jpg", title: "Lemon Meringue", text: "Tangy lemon with silky meringue topping.", price: "$26" },
+  { img: "/images/cake8.jpg", title: "Hazelnut Heaven", text: "Nutty layers with silky chocolate ganache.", price: "$29" },
+  { img: "/images/cake9.jpg", title: "Salted Caramel", text: "Sweet caramel balanced with sea salt.", price: "$26" },
+  { img: "/images/cake10.jpg", title: "Coconut Cloud", text: "Light coconut sponge with cream cheese icing.", price: "$23" },
+  { img: "/images/cake11.jpg", title: "Matcha Dream", text: "Green tea layers with white chocolate.", price: "$25" },
+  { img: "/images/cake12.jpg", title: "Coffee Velvet", text: "Rich coffee cake with crema frosting.", price: "$27" },
+  { img: "/images/cake13.jpg", title: "Banana Caramel", text: "Soft banana cake with salted caramel.", price: "$22" },
+  { img: "/images/cake14.jpg", title: "Peach Blossom", text: "Fresh peach filling with almond sponge.", price: "$24" },
+  { img: "/images/cake15.jpg", title: "Cherry Chocolate", text: "Cherry compote between chocolate layers.", price: "$28" },
+  { img: "/images/cake16.jpg", title: "Nutella Swirl", text: "Creamy hazelnut spread inside every slice.", price: "$30" },
 ];
 
 const GallerySection = () => {

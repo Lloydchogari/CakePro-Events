@@ -2,12 +2,12 @@ import React from "react";
 import "./Services.css";
 
 const SERVICE_ICONS = [
-  { src: "/public/Cake1.jpg", alt: "Service 1" },
-  { src: "/public/cake4.jpg", alt: "Service 2" },
-  { src: "/public/cake.jpg", alt: "Service 3" },
-  { src: "/public/cake2.jpg", alt: "Service 4" },
-  { src: "/public/cake_2.jpg", alt: "Service 5" },
-  { src: "/public/logo.jpeg", alt: "Service 6" },
+  { src: "/Cake1.jpg", alt: "Service 1" },
+  { src: "/cake4.jpg", alt: "Service 2" },
+  { src: "/cake.jpg", alt: "Service 3" },
+  { src: "/cake2.jpg", alt: "Service 4" },
+  { src: "/cake_2.jpg", alt: "Service 5" },
+  { src: "/logo.jpeg", alt: "Service 6" },
 ];
 
 export default function Services() {

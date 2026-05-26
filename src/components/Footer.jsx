@@ -60,7 +60,7 @@ export default function Footer() {
           </p>
           {/* Logo image */}
           <div className="footer__logo-img-wrap">
-            <img src="/public/logo.jpeg" alt="Céleste logo" className="footer__logo-img" />
+            <img src="/logo.jpeg" alt="Céleste logo" className="footer__logo-img" />
           </div>
         </div>
 

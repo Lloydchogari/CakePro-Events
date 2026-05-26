@@ -31,7 +31,6 @@ export default function Testimonials() {
       <div className="testimonials__overlay" aria-hidden="true" />
 
       <div className="testimonials__inner">
-        {/* Header */}
         <div className="testimonials__header">
           <span className="testimonials__eyebrow">Reviews</span>
           <h2 className="testimonials__heading">

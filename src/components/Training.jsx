@@ -40,13 +40,11 @@ export default function Training() {
 
   return (
     <section id="classes" className="training" ref={sectionRef}>
-      {/* Parallax background */}
       <div className="training__bg" aria-hidden="true" />
       {/* White overlay */}
       <div className="training__overlay" aria-hidden="true" />
 
       <div className="training__inner">
-        {/* ── LEFT ── */}
         <div className="training__left">
           <span className="training__eyebrow">Learn With Us</span>
 

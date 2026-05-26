@@ -51,7 +51,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.9 }}
         >
-          <img src="/public/cake4.jpg" alt="Delicious cake" className="hero-image" />
+          <img src="/cake4.jpg" alt="Delicious cake" className="hero-image" />
         </motion.div>
       </div>
 

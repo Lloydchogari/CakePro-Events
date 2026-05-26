@@ -62,7 +62,7 @@ export default function About() {
         <div className="about__img-col">
           <div className="about__img-frame">
             <img
-              src="/public/boss.jpeg"
+              src="/boss.jpeg"
               alt="Céleste bakery"
               className="about__img"
             />

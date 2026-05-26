@@ -13,7 +13,7 @@ const BlackInfoSection = () => {
     <section className="black-section">
       <div className="black-inner">
         <div className="black-image">
-          <img src="/public/cake2.jpg" alt="Cake display" />
+          <img src="/cake2.jpg" alt="Cake display" />
         </div>
 
         <div className="black-content">
