@@ -284,10 +284,12 @@
   color: #c0392b;
 }
 
+/* Thin divider between links */
 .mobile-drawer__links a + a {
   border-top: 1px solid rgba(0,0,0,0.06);
 }
 
+/* Bottom */
 .mobile-drawer__bottom {
   width: 100%;
   padding: 20px 24px 32px;
@@ -328,7 +330,9 @@
   margin: 0;
 }
 
-
+/* =========================================================
+   MOBILE BREAKPOINT
+   ========================================================= */
 @media (max-width: 768px) {
   .nav-container {
     grid-template-columns: 1fr auto;
@@ -344,3 +348,5 @@
 
   .logo img { height: 50px !important; }
 }
+
+
