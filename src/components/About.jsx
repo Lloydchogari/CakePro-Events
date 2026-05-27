@@ -81,13 +81,13 @@ export default function About() {
           </h2>
 
           <p className="about__body">
-            Céleste was born from a simple belief: every celebration deserves
+            Cake pro & events was born from a simple belief: every celebration deserves
             something extraordinary. From our studio in Harare, we've been
             crafting cakes and memories for over eight years.
           </p>
           <p className="about__body">
             Our team of passionate bakers and decorators brings creativity and
-            precision to every order — whether it's an intimate birthday cake
+            precision to every order, whether it's an intimate birthday cake
             or a grand wedding showpiece for five hundred guests.
           </p>
 

@@ -14,9 +14,9 @@ const ARC_DROP_Y  = [60, 24, 0, 24, 60];
 const ARC_SCALES  = [0.82, 0.91, 1, 0.91, 0.82];
 
 const FEATURES = [
-  { title: "Custom Cake Design",  body: "Every cake is designed from scratch — tailored to your theme, colours, and vision." },
+  { title: "Custom Cake Design",  body: "Every cake is designed from scratch, tailored to your theme, colours, and vision." },
   { title: "Premium Ingredients", body: "Belgian chocolate, farm-fresh eggs, and artisan buttercreerts in every single order." },
-  { title: "Delivered Fresh",      body: "Hand-delivered across Harare on the day of your event — refrigerated and on time." },
+  { title: "Delivered Fresh",      body: "Hand-delivered across Harare on the day of your event, refrigerated and on time." },
 ];
 
 export default function ShowcaseSection() {

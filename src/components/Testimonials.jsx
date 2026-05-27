@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "./Testimonials.css";
 
 const REVIEWS = [
-  { quote: "The most beautiful cake I've ever seen — and it tasted even better than it looked. Our guests couldn't stop talking about it.", author: "Amara Chikwanda", role: "Bride, 2024" },
+  { quote: "The most beautiful cake I've ever seen, and it tasted even better than it looked. Our guests couldn't stop talking about it.", author: "Amara Chikwanda", role: "Bride, 2024" },
   { quote: "They made my daughter's fifth birthday absolutely magical. The princess cake was perfect in every detail. 100% recommending to everyone.", author: "Tendai Moyo", role: "Birthday Mom" },
   { quote: "My go-to studio for all client events. Reliable, endlessly creative, and the quality is consistently unmatched in Harare.", author: "Grace Nkomo", role: "Event Planner" },
 ];

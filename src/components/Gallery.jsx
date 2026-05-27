@@ -7,7 +7,7 @@ const cakes = [
   { img: "/images/cake22.jpg", title: "Vanilla Bliss", text: "Classic vanilla cake with smooth frosting.", price: "$20" },
   { img: "/images/cake17.jpg", title: "Red Velvet Luxe", text: "Velvety texture with elegant finish.", price: "$28" },
   { img: "/images/cake28.jpg", title: "Caramel Crunch", text: "Buttery caramel with crunchy pecan bits.", price: "$27" },
-  { img: "/images/cake202.jpg", title: "Berry Passion", text: "Fresh berries folded into light mousse.", price: "$24" },
+  { img: "/images/cake22.jpg", title: "Berry Passion", text: "Fresh berries folded into light mousse.", price: "$24" },
   { img: "/images/cake7.jpg", title: "Lemon Meringue", text: "Tangy lemon with silky meringue topping.", price: "$26" },
   { img: "/images/cake8.jpg", title: "Hazelnut Heaven", text: "Nutty layers with silky chocolate ganache.", price: "$29" },
   { img: "/images/cake9.jpg", title: "Salted Caramel", text: "Sweet caramel balanced with sea salt.", price: "$26" },
