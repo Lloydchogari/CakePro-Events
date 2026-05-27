@@ -5,7 +5,7 @@ const SERVICE_ICONS = [
   { src: "/Cake1.jpg", alt: "Service 1" },
   { src: "/cake4.jpg", alt: "Service 2" },
   { src: "/cake.jpg", alt: "Service 3" },
-  { src: "/cake2.jpg", alt: "Service 4" },
+  { src: "/decor2.jpg", alt: "Service 4" },
   { src: "/cake_2.jpg", alt: "Service 5" },
   { src: "/logo.jpeg", alt: "Service 6" },
 ];

@@ -2,7 +2,7 @@
 
 /* ── Variables ── */
 :root {
-  --ab-white: white;
+  --ab-white: #ffffff;
   --ab-red: #c0392b;
   --ab-red-light: #e8534310;
   --ab-red-mid: #e05444;
@@ -12,6 +12,7 @@
   --ab-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* ── Section ── */
 .about {
   background-color: var(--ab-white);
   padding: 100px 40px;
@@ -19,6 +20,7 @@
   overflow: hidden;
 }
 
+/* ── Inner two-column layout ── */
 .about__inner {
   max-width: 1160px;
   margin: 0 auto;
@@ -27,9 +29,9 @@
   gap: 80px;
 }
 
-
-
-
+/* =========================================================
+   LEFT – Image column
+   ========================================================= */
 .about__img-col {
   position: relative;
   flex: 0 0 44%;
@@ -44,18 +46,19 @@
   transform: translateX(0);
 }
 
+/* Main image frame */
 .about__img-frame {
   position: relative;
-  border-radius: 4px 60px 4px 60px;
+  border-radius: 4px 60px 4px 60px; /* asymmetric rounded corners */
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  /* box-shadow: var(--ab-shadow); */
+  box-shadow: var(--ab-shadow);
 }
 
 .about__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   transition: transform 0.6s ease;
 }
@@ -64,6 +67,7 @@
   transform: scale(1.04);
 }
 
+/* "Est. 2016" red floating tag */
 .about__img-tag {
   position: absolute;
   bottom: 28px;
@@ -92,7 +96,7 @@
   font-weight: 600;
 }
 
-
+/* Decorative dot grid (bottom-right of image) */
 .about__dot-grid {
   position: absolute;
   bottom: -28px;
@@ -105,9 +109,9 @@
   z-index: -1;
 }
 
-
-
-
+/* =========================================================
+   RIGHT – Content column
+   ========================================================= */
 .about__content {
   flex: 1;
 
@@ -121,7 +125,7 @@
   transform: translateX(0);
 }
 
-
+/* "Our Story" eyebrow */
 .about__eyebrow {
   display: inline-block;
   font-size: 0.8rem;
@@ -145,8 +149,7 @@
   background: var(--ab-red);
 }
 
-
-
+/* Main heading */
 .about__heading {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(2rem, 3.5vw, 2.8rem);
@@ -157,7 +160,7 @@
   letter-spacing: -0.3px;
 }
 
-
+/* Body text */
 .about__body {
   font-size: 0.97rem;
   line-height: 1.85;
@@ -166,7 +169,7 @@
   max-width: 500px;
 }
 
-
+/* ── Stats cards ── */
 .about__stats {
   display: flex;
   gap: 16px;
@@ -205,8 +208,7 @@
   box-shadow: 0 12px 32px rgba(192, 57, 43, 0.12);
 }
 
-
-
+/* Red top accent bar */
 .about__stat-card::before {
   content: "";
   position: absolute;
@@ -234,7 +236,7 @@
   letter-spacing: 0.4px;
 }
 
-
+/* ── CTA Button ── */
 .about__cta {
   display: inline-flex;
   align-items: center;
@@ -259,8 +261,9 @@
   box-shadow: 0 10px 28px rgba(192, 57, 43, 0.45);
 }
 
-
-
+/* =========================================================
+   Responsive
+   ========================================================= */
 @media (max-width: 900px) {
   .about__inner {
     flex-direction: column;
@@ -308,5 +311,81 @@
   .about__stat-card {
     min-width: 80px;
     padding: 18px 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE-SPECIFIC ADDITIONS
+   ========================================================= */
+
+/* Mobile dot grid — hidden on desktop */
+.about__dot-grid--mobile {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  /* ── Hide Est. tag ── */
+  .about__img-tag {
+    display: none;
+  }
+
+  /* ── Hide desktop dot grid ── */
+  .about__dot-grid {
+    display: none;
+  }
+
+  /* ── Mobile dot grid: circular, centred below button ── */
+  .about__dot-grid--mobile {
+    display: block;
+    margin: 32px auto 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-image: radial-gradient(circle, var(--ab-red) 1.5px, transparent 1.5px);
+    background-size: 13px 13px;
+    opacity: 0.22;
+    /* mask to a circle so dots outside the radius are invisible */
+    -webkit-mask-image: radial-gradient(circle, black 48%, transparent 52%);
+    mask-image: radial-gradient(circle, black 48%, transparent 52%);
+  }
+}
+
+/* =========================================================
+   MOBILE DOT GRID — behind content
+   ========================================================= */
+@media (max-width: 560px) {
+  /* Content column needs relative positioning as the anchor */
+  .about__content {
+    position: relative;
+  }
+
+  /* Dot grid sits absolutely in the background */
+  .about__dot-grid--mobile {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background-image: radial-gradient(circle, var(--ab-red) 1.5px, transparent 1.5px);
+    background-size: 13px 13px;
+    opacity: 0.12;
+    -webkit-mask-image: radial-gradient(circle, black 48%, transparent 52%);
+    mask-image: radial-gradient(circle, black 48%, transparent 52%);
+    z-index: 0;
+    margin: 0;          /* override previous margin */
+    pointer-events: none;
+  }
+
+  /* All direct content children sit above the dots */
+  .about__eyebrow,
+  .about__heading,
+  .about__body,
+  .about__stats,
+  .about__cta {
+    position: relative;
+    z-index: 1;
   }
 }

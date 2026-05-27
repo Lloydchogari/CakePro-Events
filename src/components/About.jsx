@@ -61,19 +61,18 @@ export default function About() {
         {/* ── LEFT: Image ── */}
         <div className="about__img-col">
           <div className="about__img-frame">
-            <img
-              src="/boss.jpeg"
-              alt="Céleste bakery"
-              className="about__img"
-            />
+            <img src="/boss.jpeg" alt="Céleste bakery" className="about__img" />
+            {/* Tag hidden on mobile via CSS */}
             <div className="about__img-tag">
               <span>Est.</span>
               <strong>2016</strong>
             </div>
           </div>
+          {/* Desktop dot grid — bottom-right of image */}
           <div className="about__dot-grid" aria-hidden="true" />
         </div>
 
+        {/* ── RIGHT: Content ── */}
         <div className="about__content">
           <span className="about__eyebrow">Our Story</span>
 
@@ -92,7 +91,6 @@ export default function About() {
             or a grand wedding showpiece for five hundred guests.
           </p>
 
-
           <div className="about__stats">
             {stats.map((s, i) => (
               <div
@@ -107,6 +105,9 @@ export default function About() {
           </div>
 
           <button className="about__cta">Contact Us</button>
+
+          {/* Mobile-only dot grid — centred below button, circular shape */}
+          <div className="about__dot-grid--mobile" aria-hidden="true" />
         </div>
 
       </div>

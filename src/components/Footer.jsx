@@ -13,7 +13,7 @@ const NAV_LINKS = [
 const SOCIALS = [
   {
     label: "Instagram",
-    handle: "@celeste.hre",
+    handle: "cake_pro_events",
     href: "#",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -25,7 +25,7 @@ const SOCIALS = [
   },
   {
     label: "Facebook",
-    handle: "Céleste Cakes",
+    handle: "Cake Pro & Events",
     href: "#",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -35,7 +35,7 @@ const SOCIALS = [
   },
   {
     label: "WhatsApp",
-    handle: "+263 77 123 4567",
+    handle: "+263 77 326 0535",
     href: "#",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -54,13 +54,13 @@ export default function Footer() {
 
         {/* ── Brand column ── */}
         <div className="footer__brand">
-          <span className="footer__logo">Céleste</span>
+          <span className="footer__logo">Cake Pro Events</span>
           <p className="footer__tagline">
-            Crafting extraordinary cakes &amp; memories from our studio in Harare, since 2016.
+            Crafting extraordinary cakes &amp; memories from our studio in Harare, since 2018.
           </p>
           {/* Logo image */}
           <div className="footer__logo-img-wrap">
-            <img src="/logo.jpeg" alt="Céleste logo" className="footer__logo-img" />
+            <img src="/logo.jpeg" alt="Cake Pro Events logo" className="footer__logo-img" />
           </div>
         </div>
 
@@ -82,11 +82,11 @@ export default function Footer() {
           <ul className="footer__contact-list">
             <li>
               <span className="footer__contact-label">Phone</span>
-              <a href="tel:+263771234567" className="footer__link">+263 77 123 4567</a>
+              <a href="tel:+263771234567" className="footer__link">+263 77 326 0535</a>
             </li>
             <li>
               <span className="footer__contact-label">Email</span>
-              <a href="mailto:hello@celeste.co.zw" className="footer__link">hello@celeste.co.zw</a>
+              <a href="mailto:hello@celeste.co.zw" className="footer__link">cakeproevents@gmail.com</a>
             </li>
             <li>
               <span className="footer__contact-label">Studio</span>
@@ -113,7 +113,7 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div className="footer__bottom">
-        <span className="footer__copy">© {new Date().getFullYear()} Céleste. All rights reserved.</span>
+        <span className="footer__copy">© {new Date().getFullYear()} Cakes you'll ❤️. All rights reserved.</span>
       </div>
     </footer>
   );

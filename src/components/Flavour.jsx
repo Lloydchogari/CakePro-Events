@@ -2,11 +2,18 @@ import React, { useEffect, useRef } from "react";
 import "./Flavour.css";
 
 const flavourCircles = [
-  { id: 1, src: "/cake2.jpg", alt: "Chocolate Cake", top: "3%",  left: "50%" },
+  { id: 1, src: "/cake2.jpg",     alt: "Chocolate Cake", top: "3%",  left: "50%" },
   { id: 2, src: "/cake4 (2).jpg", alt: "Caramel Cake",   top: "20%", left: "60%" },
-  { id: 3, src: "/cake4.jpg", alt: "Red Velvet",     top: "40%", left: "62%" },
-  { id: 4, src: "/cake_2.jpg", alt: "Floral Cake",    top: "58%", left: "54%" },
-  { id: 5, src: "/cake.jpg", alt: "Layered Cake",   top: "74%", left: "42%" },
+  { id: 3, src: "/cake4.jpg",     alt: "Red Velvet",     top: "40%", left: "62%" },
+  { id: 4, src: "/cake_2.jpg",    alt: "Floral Cake",    top: "58%", left: "54%" },
+  { id: 5, src: "/cake.jpg",      alt: "Layered Cake",   top: "74%", left: "42%" },
+];
+
+const mobileCorners = [
+  { pos: "tl", src: "/cake2.jpg",  alt: "Chocolate Cake" },
+  { pos: "tr", src: "/cake4.jpg",  alt: "Red Velvet"     },
+  { pos: "bl", src: "/cake_2.jpg", alt: "Floral Cake"    },
+  { pos: "br", src: "/cake.jpg",   alt: "Layered Cake"   },
 ];
 
 export default function Flavour() {
@@ -32,15 +39,15 @@ export default function Flavour() {
       <div className="flavour__blob" aria-hidden="true" />
 
       <div className="flavour__inner">
+        {/* ── LEFT COLUMN ── */}
         <div className="flavour__visual">
+
+          {/* Desktop: hero cake */}
           <div className="flavour__hero-wrap">
-            <img
-              src="/logo.jpeg"
-              alt="Hero chocolate drip cake"
-              className="flavour__hero-img"
-            />
+            <img src="/logo.jpeg" alt="Hero chocolate drip cake" className="flavour__hero-img" />
           </div>
 
+          {/* Desktop: SVG connector */}
           <svg
             className="flavour__connector"
             viewBox="0 0 300 600"
@@ -57,7 +64,7 @@ export default function Flavour() {
             />
           </svg>
 
-          {/* Floating circular thumbnails */}
+          {/* Desktop: floating circles */}
           {flavourCircles.map((item, i) => (
             <div
               key={item.id}
@@ -67,16 +74,29 @@ export default function Flavour() {
               <img src={item.src} alt={item.alt} />
             </div>
           ))}
+
+          {/* Mobile: full-width banner image — hidden on desktop via CSS */}
+          <img
+            src="/images/cake16.jpg"
+            alt="Featured cake"
+            className="flavour__mobile-banner"
+          />
+
+          {/* Mobile: four corner circles — hidden on desktop via CSS */}
+          <div className="flavour__mobile-circles">
+            {mobileCorners.map((c) => (
+              <div key={c.pos} className={`flavour__mc flavour__mc--${c.pos}`}>
+                <img src={c.src} alt={c.alt} />
+              </div>
+            ))}
+          </div>
+
         </div>
 
         {/* ── RIGHT COLUMN ── */}
         <div className="flavour__content">
           <div className="flavour__overlap-img-wrap">
-            <img
-              src="/images/cake16.jpg"
-              alt="Featured cake"
-              className="flavour__overlap-img"
-            />
+            <img src="/images/cake16.jpg" alt="Featured cake" className="flavour__overlap-img" />
           </div>
 
           <h2 className="flavour__title">Flavour Based</h2>
@@ -95,12 +115,8 @@ export default function Flavour() {
           </ul>
 
           <div className="flavour__actions">
-            <button className="flavour__btn flavour__btn--filled">
-              View Flavours
-            </button>
-            <button className="flavour__btn flavour__btn--outline">
-              Order Now
-            </button>
+            <button className="flavour__btn flavour__btn--filled">View Flavours</button>
+            <button className="flavour__btn flavour__btn--outline">Order Now</button>
           </div>
         </div>
       </div>
